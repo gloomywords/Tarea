@@ -1,4 +1,4 @@
-<?php
+<?
 try {
 		$charge = Conekta_Charge::create(array(
 		  'description'=> 'Stogies',
@@ -45,3 +45,4 @@ try {
 	} catch (Conekta_Error $e) {
 		echo $e->message_to_purchaser;
 	}
+	?>
