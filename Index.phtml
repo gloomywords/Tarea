@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>PayPal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <script type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.2/js/conekta.js"></script>
+    <style>
+        .w3-background {
+            background-image:url(http://www.imore.com/sites/imore.com/files/styles/larger_wm_brw/public/field/image/2016/02/paypal-new-iphone6s-plus-hero.jpg?itok=0-pnZMbU);
+            background-size:1000px;
+            background-position:center;
+            -webkit-filter: grayscale(0.8) hue-rotate(360deg);
+        }
+        .w3-filter{-webkit-filter:grayscale(0.8) hue-rotate(360deg);}
+
+        h1{
+            color:white;
+            font-style:italic;
+        }
+    </style>
+</head>
+
+<body class="w3-content" style="max-width:1300px">
+
+    <!-- First Grid: Logo & About -->
+    <div class="w3-row">
+        <div class="w3-half w3-background w3-container w3-center w3-display" style="height:700px">
+            <div class="w3-padding-64">
+                <h1>PayPal</h1>
+            </div>
+            <div class="w3-padding-64">
+                <a href="#Login" class="w3-btn w3-btn-block w3-hover-teal w3-padding-16 w3-show">Login</a>
+				</br>
+                <a href="#Register" class="w3-btn w3-btn-block w3-hover-teal w3-padding-16 w3-show">Register</a>
+                </br>
+                <a href="#contact" class="w3-btn w3-btn-block w3-hover-brown w3-padding-16">Contact</a>
+
+            </div>
+        </div>
+        <div class="w3-half w3-blue-grey w3-container" style="height:700px">
+            <div class="w3-padding-64 w3-center">
+                <h1>About Us</h1>
+                <img src="https://www.iwebconnector.com/img/blog/logo-paypal.jpg" class="w3-margin w3-circle w3-filter" alt="Person" style="width:50%">
+                <div class="w3-center-align w3-justify w3-padding-xxlarge">
+                    <p>PayPal es un servicio global que te permite enviar pagos a la cuenta del vendedor con tu tarjeta de crédito, pero sin compartir tu información financiera.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="w3-row" id="Login">
+  <div class=" w3-teal w3-container" style="height:700px">
+    <div class="w3-padding-64 w3-padding-xxlarge">
+      <h1>Log In</h1>
+      <p class="w3-opacity"></p>
+      <form class="w3-container w3-card-2 w3-padding-32 w3-white">
+        <div class="w3-group">
+          <label>E-MAIL </label>
+          <input class="w3-input" style="width:100%;" type="text" required>
+        </div>
+        <div class="w3-group">
+          <label>PASWORD</label>
+          <input class="w3-input" style="width:100%;" type="text" required>
+        </div>
+        <button type="button" class="w3-btn w3-right w3-theme">Send</button>
+      </form>
+	  <a> Register</a>
+    </div>
+  </div>
+</div>
+    <!-- Second Grid: Work & Resume -->
+    <div class="w3-row">
+        <div class=" w3-black w3-center" style="min-height:800px" id="Register">
+            <div class="w3-padding-64">
+                <h2>Register Card</h2>
+                <p>Welcome to PayPal.</p>
+            </div>
+            <form action="php.php" method="post" id="card-form">
+                <div class="w3-group">
+                    <label>Full Name</label>
+                    <input class="w3-input" size="20" style="width:100%;" type="text" data-conekta="card[name]" required>
+                </div>
+				<div class="w3-group">
+                    <label>Email</label>
+                    <input class="w3-input" size="25" style="width:100%;" type="email" data-conekta="card[name]" required>
+                </div>
+				<div class="w3-group">
+                    <label>Password</label>
+                    <input class="w3-input" size="25" style="width:100%;" type="password" password="true" data-conekta="card[name]" required>
+                </div>
+								<div class="w3-group">
+                    <label>Confirm Password</label>
+                    <input class="w3-input" size="25" style="width:100%;" type="password" password="true" data-conekta="card[name]" required>
+                </div>
+                <div class="w3-group">
+                    <label>Credit Card Number</label>
+                    <input class="w3-input" size="20" style="width:100%;" type="text" data-conekta="card[number]" required>
+                </div>
+                <div class="w3-group">
+                    <label>CVC</label>
+                    <input class="w3-input" size="4" style="width:100%;" type="text" data-conekta="card[cvc]" required>
+                </div>
+                <div class="w3-group">
+                    <label>Expiration Date (MM/AAAA)</label>
+                    <div>
+                        <input class="w3-input" size="2" style="width:20%; float:left;" type="text" data-conekta="card[exp_month]" required>
+                        <label>/</label>
+                        <input class="w3-input" type="text" style="width:70%;float:right;" size="4" data-conekta="card[exp_year]" required />
+                    </div>
+                </div>
+                <div class="w3-group">
+                    <label>Street</label>
+                    <input class="w3-input" style="width:100%;" type="text" data-conekta="card[address][street1]" required>
+                </div>
+                <div class="w3-group">
+                    <label>Neighborhood</label>
+                    <input class="w3-input" style="width:100%;" type="text" data-conekta="card[address][street2]" required>
+                </div>
+                <div class="w3-group">
+                    <label>City</label>
+                    <input class="w3-input" style="width:100%;" type="text" data-conekta="card[address][city]" required>
+                </div>
+                <div class="w3-group">
+                    <label>State</label>
+                    <input class="w3-input" style="width:100%;" type="text" data-conekta="card[address][state]" required>
+                </div>
+                <div class="w3-group">
+                    <label>PC</label>
+                    <input class="w3-input" style="width:100%;" type="text" data-conekta="card[address][zip]" required>
+                </div>
+                <div class="w3-group">
+                    <label>Country</label>
+                    <input class="w3-input" style="width:100%;" type="text" data-conekta="card[address][country]" required>
+                </div>
+
+                <button type="submit" class="w3-btn w3-right w3-theme">Pay Now</button>
+              <script>
+
+
+              Conekta.setPublishableKey("key_E9ZJ6M3hWCJ14iNwWApCDAg");
+              Conekta.getPublishableKey();
+
+                  $(function () {
+                    $("#card-form").submit(function(event) {
+                      var $form = $(this);
+
+                      // Previene hacer submit más de una vez
+                      $form.find("button").prop("disabled", true);
+                      //Conekta.token.create($form, conektaSuccessResponseHandler, conektaErrorResponseHandler);
+                     Conekta.Token.create($form, conektaSuccessResponseHandler, conektaErrorResponseHandler); //v5+
+
+                      // Previene que la información de la forma sea enviada al servidor
+                      return false;
+                    });
+                  });
+
+                  var conektaSuccessResponseHandler = function(token) {
+                  var $form = $("#card-form");
+
+                  /* Inserta el token_id en la forma para que se envíe al servidor */
+                  $form.append($("<input type='hidden' name='conektaTokenId'>").val(token.id));
+
+                  /* and submit */
+                  $form.get(0).submit();
+                };
+              </script>
+            </form>
+            </div><br>
+        </div>
+
+
+    <!-- Third Grid: Swing By & Contact -->
+    <div class="w3-row" id="contact">
+        <div class="w3-half w3-dark-grey w3-container w3-center" style="height:700px">
+            <div class="w3-padding-64">
+                <h1>Swing By PayPal</h1>
+            </div>
+            <div class="w3-padding-64">
+                <p>..for a cup of coffee, or whatever.</p>
+                <p>Chicago, US</p>
+                <p>+00 1515151515</p>
+                <p>PayPal@mail.com</p>
+            </div>
+        </div>
+        <div class="w3-half w3-teal w3-container" style="height:700px">
+            <div class="w3-padding-64 w3-padding-xxlarge">
+                <h1>Contact</h1>
+                <p class="w3-opacity">GET IN TOUCH</p>
+                <form class="w3-container w3-card-2 w3-padding-32 w3-white">
+                    <div class="w3-group">
+                        <label>email</label>
+                        <input class="w3-input" style="width:100%;" type="text" required>
+                    </div>
+                    <div class="w3-group">
+                        <label>Name</label>
+                        <input class="w3-input" style="width:100%;" type="text" required>
+                    </div>
+                    <div class="w3-group">
+                        <label>Subject</label>
+                        <input class="w3-input" style="width:100%;" type="text" required>
+                    </div>
+                    <button type="button" class="w3-btn w3-right w3-theme">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-black w3-padding-16">
+        <p>Powered by Software UAG Team</p>
+    </footer>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.5.0/js/conekta.js"></script>
+    <script type="text/javascript">
+
+    // Conekta Public Key
+    //Conekta.setPublishableKey('key_E9ZJ6M3hWCJ14iNwWApCDAg'); //v3.2
+    Conekta.setPublicKey('kkey_E9ZJ6M3hWCJ14iNwWApCDAg'); //v5+
+
+    // ...
+    </script>
+</body>
+</html>
